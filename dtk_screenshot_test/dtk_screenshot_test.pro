@@ -1,8 +1,10 @@
 QT += core gui widgets
+# 添加DTK依赖
+CONFIG += c++11 link_pkgconfig
+PKGCONFIG += dtkwidget dtkgui dtkcore
 
-TARGET = screenshot_test
+TARGET = dtk-screenshot-test
 TEMPLATE = app
-CONFIG += c++11
 
 SOURCES += \
     main.cpp \

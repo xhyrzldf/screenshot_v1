@@ -1,23 +1,29 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+// DTK头文件
+#include <DMainWindow>
+#include <DPushButton>
+#include <DLineEdit>
+#include <DTextEdit>
+#include <DLabel>
+#include <DGroupBox>
+
+// Qt头文件
 #include <QScreen>
 #include <QPixmap>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QTextEdit>
-#include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QTimer>
 #include <QDateTime>
-#include <QGroupBox>
 #include <QProcess>
 #include <QDir>
 #include <QFile>
 
-class MainWindow : public QMainWindow
+// 使用DTK命名空间
+DWIDGET_USE_NAMESPACE
+
+class MainWindow : public DMainWindow
 {
     Q_OBJECT
     
@@ -38,15 +44,16 @@ private:
     QString screenshotSavePath;
     QProcess *screenshotProcess;
     
-    // UI 组件
-    QPushButton *screenshotButton;
-    QPushButton *fullScreenButton;
-    QPushButton *saveButton;
-    QLineEdit *inputTestField;
-    QTextEdit *chineseTestArea;
-    QLabel *screenshotLabel;
-    QLabel *inputMethodLabel;
-    QLabel *systemInfoLabel;
+    // UI 组件 (使用DTK控件)
+    DPushButton *screenshotButton;
+    DPushButton *fullScreenButton;
+    DPushButton *systemScreenshotButton;
+    DPushButton *saveButton;
+    DLineEdit *inputTestField;
+    DTextEdit *chineseTestArea;
+    DLabel *screenshotLabel;
+    DLabel *inputMethodLabel;
+    DLabel *systemInfoLabel;
     
     void setupUi();
     void displaySystemInfo();
